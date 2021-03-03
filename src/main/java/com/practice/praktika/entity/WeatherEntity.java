@@ -1,9 +1,7 @@
 package com.practice.praktika.entity;
 
-import com.fasterxml.jackson.annotation.JsonClassDescription;
-import com.fasterxml.jackson.annotation.JsonProperty;
-
 import javax.persistence.*;
+import java.util.Date;
 
 @Entity
 @Table(name = "prognoz")
@@ -15,9 +13,9 @@ public class WeatherEntity {
 
     private String forecastDate;
 
-    private String minimumTemperature;
+    private int minimumTemperature;
 
-    private String maximumTemperature;
+    private int maximumTemperature;
 
     private String notes;
 
@@ -37,19 +35,19 @@ public class WeatherEntity {
         this.forecastDate = forecastDate;
     }
 
-    public String getMinimumTemperature() {
+    public int getMinimumTemperature() {
         return minimumTemperature;
     }
 
-    public void setMinimumTemperature(String minimumTemperature) {
+    public void setMinimumTemperature(int minimumTemperature) {
         this.minimumTemperature = minimumTemperature;
     }
 
-    public String getMaximumTemperature() {
+    public int getMaximumTemperature() {
         return maximumTemperature;
     }
 
-    public void setMaximumTemperature(String maximumTemperature) {
+    public void setMaximumTemperature(int maximumTemperature) {
         this.maximumTemperature = maximumTemperature;
     }
 

@@ -1,6 +1,5 @@
 package com.practice.praktika.model;
 
-
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 
@@ -10,10 +9,10 @@ public class Cells {
     private String forecastDate;
 
     @JsonProperty("MinimumTemperature")
-    private String minimumTemperature;
+    private int minimumTemperature;
 
     @JsonProperty("MaximumTemperature")
-    private String maximumTemperature;
+    private int maximumTemperature;
 
     @JsonProperty("PrecipitationType")
     private String notes;
@@ -26,19 +25,19 @@ public class Cells {
         this.forecastDate = forecastDate;
     }
 
-    public String getMinimumTemperature() {
+    public int getMinimumTemperature() {
         return minimumTemperature;
     }
 
-    public void setMinimumTemperature(String minimumTemperature) {
+    public void setMinimumTemperature(int minimumTemperature) {
         this.minimumTemperature = minimumTemperature;
     }
 
-    public String getMaximumTemperature() {
+    public int getMaximumTemperature() {
         return maximumTemperature;
     }
 
-    public void setMaximumTemperature(String maximumTemperature) {
+    public void setMaximumTemperature(int maximumTemperature) {
         this.maximumTemperature = maximumTemperature;
     }
 
