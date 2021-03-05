@@ -10,7 +10,6 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
-import java.util.Calendar;
 import java.util.List;
 import java.util.Optional;
 
@@ -50,6 +49,10 @@ public class TestService {
             }
     }
 
+
+    public String getCount(){
+        return Long.toString(weatherRepo.count());
+    }
 
     @Autowired
     public TestService(WeatherClient weatherClient, WeatherRepo weatherRepo) {
