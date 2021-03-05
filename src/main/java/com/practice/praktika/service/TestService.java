@@ -53,6 +53,10 @@ public class TestService {
         return Long.toString(weatherRepo.count());
     }
 
+    public String getCount(){
+        return Long.toString(weatherRepo.count());
+    }
+
     @Autowired
     public TestService(WeatherClient weatherClient, WeatherRepo weatherRepo) {
         this.weatherClient = weatherClient;
