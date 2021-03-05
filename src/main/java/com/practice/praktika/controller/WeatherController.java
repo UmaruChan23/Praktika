@@ -18,14 +18,10 @@ public class WeatherController {
     private TestService testService;
 
     @GetMapping
-    public ResponseEntity<List<WeatherEntity>> getWeatherJSON(@RequestHeader("eTag") String etag) {
-        if(etag.equals(testService.getCount())){
-            return ResponseEntity.status(HttpStatus.NOT_MODIFIED).body(null);
-        } else {
+    public ResponseEntity<List<WeatherEntity>> getWeatherJSON() {
             return ResponseEntity.ok()
                     .eTag(testService.getCount())
                     .body(testService.test());
-        }
     }
 
     @GetMapping("/{id}")
