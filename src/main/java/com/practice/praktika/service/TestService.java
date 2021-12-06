@@ -5,6 +5,7 @@ import com.practice.praktika.entity.WeatherEntity;
 import com.practice.praktika.model.Weather;
 import com.practice.praktika.repository.WeatherRepo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;
@@ -29,9 +30,12 @@ public class TestService {
         return weatherRepo.findById(id);
     }
 
+    @Value("${api.key}")
+    String api_key;
+
     @Scheduled(fixedDelay = 3600000)
     public void updateTable() {
-            String api_key = "2c29ee50b30e5202fa15b6d1616e0aa4";
+
             List<Weather> weathers = null;
 
             if (weatherRepo.count() < weatherClient.rowsCount(api_key)) {
